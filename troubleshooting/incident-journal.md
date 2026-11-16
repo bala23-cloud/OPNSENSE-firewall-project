@@ -1,9 +1,9 @@
 # Troubleshooting and incident journal
 
 ## LAB-001 — Kali-to-Ubuntu HTTP timeout (unresolved, historical topology)
-**Context:** Kali `192.168.254.3` attempted TCP/80 to Ubuntu `192.168.1.2` during Day 3.
+**Context:** Kali (`KALI_LAB_IP`) attempted TCP/80 to Ubuntu (`UBUNTU_SERVER_IP`) during Day 3. The real private lab addresses are masked in this public repository.
 
-**Observed:** `curl -v --connect-timeout 5 http://192.168.1.2:80/` timed out after approximately five seconds.
+**Observed:** A request to `http://UBUNTU_SERVER_IP:80/` timed out after approximately five seconds.
 
 **Related logs:** OPNsense OPT1 showed inbound ICMP blocks from Kali to Ubuntu labeled `Default deny / state violation rule`. Those are ICMP entries, not TCP/80 evidence.
 
@@ -14,4 +14,4 @@
 **Next validation:** measure actual routes and adapters after redesign; establish a working baseline before adding NAT/filter rules.
 
 ## Journal template
-Date/time · business impact · topology version · exact command · observed output · hypothesis · test performed · evidence path · confirmed root cause · fix · rollback · lesson.
+Date/time · business impact · topology version · exact command (with addresses masked) · observed output · hypothesis · test performed · evidence path · confirmed root cause · fix · rollback · lesson.

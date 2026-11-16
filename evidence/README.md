@@ -4,11 +4,18 @@ Screenshots and packet captures will be added after real tests. There are no fab
 
 Suggested names: `day-04-wan-interface.png`, `day-04-port-forward-rule.png`, `day-04-windows-curl.png`, `day-04-firewall-live-log.png`.
 
+## Redaction before publishing
+- Replace private/public IP addresses with role placeholders such as `KALI_LAB_IP`, `UBUNTU_SERVER_IP` and `FIREWALL_INTERFACE_IP`.
+- Blur MAC addresses, public IPs, hostnames, usernames, browser tabs and any personal identifiers.
+- Remove passwords, API tokens, VPN keys, QR codes and configuration secrets.
+- Do not commit raw firewall backups or packet captures unless they have been reviewed and sanitized.
+
 For each artifact record:
 - Test date/time and topology version
-- Source and destination, protocol/port
-- Exact test command and expected result
+- Source and destination roles, protocol/port (not real IPs)
+- Exact test command with addresses replaced by placeholders
+- Expected result
 - Actual output and interpretation
-- Redactions applied (credentials, sensitive host identifiers and real public IPs)
+- Redactions applied
 
-Avoid committing private keys, tokens, configuration backups containing secrets, or unredacted personal data.
+Never invent evidence. Commit screenshots only after collecting them from the actual lab.

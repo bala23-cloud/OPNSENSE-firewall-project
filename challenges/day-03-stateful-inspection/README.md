@@ -6,17 +6,17 @@
 An internal Ubuntu HTTP server must be reachable only through an intended security boundary. ICMP and TCP access should be governed by explicit policies.
 
 ## Historical lab context
-Earlier experiments used Kali `192.168.254.3` and Ubuntu `192.168.1.2` on different subnets, with Kali-side traffic reported on OPNsense OPT1. This was an earlier topology and is not the proposed same-LAN redesign.
+Earlier experiments used Kali (`KALI_LAB_IP`) and Ubuntu (`UBUNTU_SERVER_IP`) on different subnets, with Kali-side traffic reported on OPNsense OPT1. These were private lab addresses and are masked here. This was an earlier topology and is not the proposed same-LAN redesign.
 
 ## Recorded tests and observations
 1. A Python HTTP server was started on Ubuntu using port **80**, as clarified during the lab discussion. The exact launch command/output was not preserved.
-2. From Kali, `curl -v --connect-timeout 5 http://192.168.1.2:80/` produced:
+2. From Kali, the request to `http://UBUNTU_SERVER_IP:80/` produced:
    ```text
-   Trying 192.168.1.2:80...
-   Connection timed out after 5003 milliseconds
-   curl: (28) Connection timed out after 5003 milliseconds
+   Trying UBUNTU_SERVER_IP:80...
+   Connection timed out after approximately five seconds
+   curl: (28) Connection timed out
    ```
-3. The supplied OPNsense Live View showed **OPT1 / In / ICMP / 192.168.254.3 → 192.168.1.2 / block / Default deny / state violation rule**, repeated across several seconds. It also showed a blocked DHCP broadcast `0.0.0.0:68 → 255.255.255.255:67`.
+3. The supplied OPNsense Live View showed **OPT1 / In / ICMP / KALI_LAB_IP → UBUNTU_SERVER_IP / block / Default deny / state violation rule**, repeated across several seconds. It also showed a blocked DHCP broadcast. Exact interface addresses are intentionally masked.
 4. These ICMP log entries **do not prove** the TCP/80 curl was blocked by that same rule. No matching TCP/80 deny entry was supplied.
 5. We discussed stateful connection tracking: permitted flows can create states that allow legitimate return packets; a stateful firewall does not guarantee that application payloads are safe.
 

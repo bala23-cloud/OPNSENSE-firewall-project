@@ -15,8 +15,13 @@ Windows (outside) -- OPNsense WAN | firewall / NAT | OPNsense LAN -- internal sw
 - Port forwarding alone is insufficient unless the associated filtering policy permits the intended traffic.
 - Do not treat OPNsense's own successful HTTP request as proof of Windows→LAN reachability.
 
-## Address inventory
-Historical lab observations (not a confirmed current topology): Kali `192.168.254.3`, Ubuntu `192.168.1.2`; gateway/interface assignments changed during earlier experiments. Current addressing is **TBD** and must be measured again after redesign.
+## Address inventory (masked)
+Historical lab observations used private lab addresses. They are intentionally not reproduced in this public repository:
+- Kali test client: `KALI_LAB_IP`
+- Ubuntu HTTP server: `UBUNTU_SERVER_IP`
+- OPNsense interface/gateway values: `FIREWALL_INTERFACE_IP`
+
+These labels are placeholders, not literal addresses. The current addressing plan must be measured again after the topology is redesigned. Keep the real values only in a private local lab note.
 
 ## Required evidence
-VirtualBox adapter screenshots, OPNsense interface assignments, Windows routes, Kali/Ubuntu routes, firewall/NAT rules, and two-sided packet captures.
+VirtualBox adapter screenshots, OPNsense interface assignments, Windows routes, Kali/Ubuntu routes, firewall/NAT rules, and two-sided packet captures. Blur or replace all IP addresses in screenshots and terminal output before committing them.

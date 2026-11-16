@@ -1,6 +1,6 @@
 # Day 11 — High Availability and Failover
 
-**Status:** Planned — practical validation not yet recorded.
+**Guide status:** Documentation complete. Practical validation has not yet been recorded.
 
 ## Scenario
 A small company needs to strengthen its network security while keeping business services available. This day's lab focuses on high availability and failover.

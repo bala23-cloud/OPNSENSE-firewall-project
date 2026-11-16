@@ -1,6 +1,6 @@
 # Day 05 — Network Segmentation and VLANs
 
-**Status:** Planned — practical validation not yet recorded.
+**Guide status:** Documentation complete. Practical validation has not yet been recorded.
 
 ## Scenario
 A small company needs to strengthen its network security while keeping business services available. This day's lab focuses on network segmentation and vlans.

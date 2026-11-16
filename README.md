@@ -58,6 +58,11 @@ See [the complete 15-day roadmap](ROADMAP.md) and [daily challenge notes](challe
 - [Final report](final-report/README.md) — capstone report structure
 - [LinkedIn posts](linkedin-posts/README.md) — project communication
 
+## Public repository privacy
+All lab addressing in this public repository is represented with role-based placeholders such as `KALI_LAB_IP`, `UBUNTU_SERVER_IP` and `FIREWALL_INTERFACE_IP`. Do not commit real private/public IPs, gateway values, MAC addresses, hostnames, credentials or tokens. Mask addresses in screenshots, terminal output, packet captures and exported configurations before publishing. Keep the real lab addressing in a private local note only.
+
+**History note:** Editing a file removes the address from its current version, but an earlier public Git commit may still contain the old text. A complete historical purge requires rewriting Git history and force-pushing; this is a separate, potentially disruptive operation.
+
 ## How progress is reported
 A guide being written does not mean the practical has been performed. Each day distinguishes documentation, configuration, observed results and verified results. A timeout alone does not identify the cause; a logged ICMP block does not prove HTTP was blocked. Only mark a test verified after repeating it and recording the actual output.
 
